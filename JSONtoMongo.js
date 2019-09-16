@@ -11,9 +11,15 @@ var fs = require('fs'),
     config = require('./config');
 
 /* Connect to your database using mongoose - remember to keep your key secret*/
-//see https://mongoosejs.com/docs/connections.html
-//See https://docs.atlas.mongodb.com/driver-connection/
+mongoose.connect(config.db.uri, {useNewUrlParser: true, dbName: 'DBcluster'});
 
+fs.readFile('listings.json', 'utf8', (err, data) => {
+    const listing_data = JSON.parse(data);
+
+    listing_data.entries.forEach((listing) => {
+        (new Listing(listing)).save();
+    });
+});
 /* 
   Instantiate a mongoose model for each listing object in the JSON file, 
   and then save it to your Mongo database 
