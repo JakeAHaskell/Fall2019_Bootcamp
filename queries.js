@@ -38,11 +38,10 @@ var updatePhelpsLab = function() {
     Correct Address: 1953 Museum Rd, Gainesville, FL 32603
 
    */
-    Listing.findOneAndUpdate({
-            code: "PHL"
-        },
+    Listing.findOneAndUpdate({code: "PHL"},
         {
-            address: "1953 Museum Rd, Gainesville, FL 32603"
+            address: "1953 Museum Rd, Gainesville, FL 32603",
+            updated_at: Date()
         }, (error, listing) => {
             console.log(listing)
         })

@@ -22,8 +22,9 @@ var listingSchema = new Schema({
         longitude: Number,
     },
     address: String,
-    updated_at: Date,
     created_at: Date,
+    updated_at: Date,
+
 });
 
 /* Create a 'pre' function that adds the updated_at (and created_at if not already there) property 
@@ -37,7 +38,7 @@ listingSchema.pre('save', function(next) {
 
     /* Use your schema to instantiate a Mongoose model */
 //Check out - https://mongoosejs.com/docs/guide.html#models
-    var Listing = mongoose.model('Listing', listingSchema);
+    var Listing = mongoose.model('Listings', listingSchema);
 
     /* Export the model to make it avaiable to other parts of your Node application */
     module.exports = Listing;
