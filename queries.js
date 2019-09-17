@@ -3,7 +3,7 @@ const mongoose = require('mongoose'),
     Listing = require('./ListingSchema.js'),
     config = require('./config');
 /* Connect to your database using mongoose - remember to keep your key secret*/
-mongoose.connect(config.db.uri, {useNewUrlParser: true, dbName: 'DBcluster'});
+mongoose.connect(config.db.uri, {useNewUrlParser: true, dbName: 'Bootcamp2'});
 /* Fill out these functions using Mongoose queries*/
 //Check out - https://mongoosejs.com/docs/queries.html
 
@@ -58,5 +58,5 @@ var retrieveAllListings = function() {
 
 findLibraryWest();
 removeCable();
-updatePhelpsMemorial();
-retrieveAllListings();
+updatePhelpsLab();
+//retrieveAllListings();

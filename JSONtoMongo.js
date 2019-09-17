@@ -10,7 +10,7 @@ var fs = require('fs'),
     config = require('./config');
 
 /* Connect to your database using mongoose - remember to keep your key secret*/
-mongoose.connect(config.db.uri, {useNewUrlParser: true, dbName: 'DBcluster'});
+mongoose.connect(config.db.uri, {useNewUrlParser: true, dbName: 'Bootcamp2'});
 
 fs.readFile('listings.json', 'utf8', (err, data) => {
     const listing_data = JSON.parse(data);
